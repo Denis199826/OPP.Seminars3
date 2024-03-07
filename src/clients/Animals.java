@@ -1,7 +1,7 @@
 package clients;
 import java.time.LocalDate;
 
-public class Animals {
+public abstract class Animals {
     protected String name;
     protected float weight;
     protected LocalDate age;
@@ -12,36 +12,9 @@ public class Animals {
         this.age = age;
         this.owner = owner;
     }
-    public void lifeCycle(){
-        wakeup(14);
-        eat();
-        play();
-        sleep();
-    }
-    public void toGo (){
-            System.out.println(getType() + " to go");
-    }
-    public void fly (){
-        System.out.println(getType() + " fly");
-    }
-    public void swim (){
-        System.out.println(getType() + " swim");
-    }
-    private void sleep (){
-        System.out.println(getType() + " is sleeping");
-    }
-    private void wakeup(){
-        System.out.println(getType() + " waked up");
-    }
-    private void wakeup(int time){
-        System.out.println(getType() + " waked up" + time);
-    }
-    private void eat(){
-        System.out.println(getType() + "  eat");
-    }
-    private void play(){
-        System.out.println(getType() + "  play");
-    }
+
+
+
 
     public String getType(){
         return getClass().getSimpleName();
@@ -70,6 +43,7 @@ public class Animals {
     public void setOwner(Owner owner) {
         this.owner = owner;
     }
+    public abstract void eat();
 
     public String toString(){
 
