@@ -8,7 +8,7 @@ public class VeterinaryClinic {
     private List<Staff> staff = new ArrayList<>();
     private List<Animals> anim = new ArrayList<>();
 
-    public VeterinaryClinic(String clinicName) {
+    public VeterinaryClinic() {
         this.clinicName = clinicName;
         this.staff = new ArrayList<>();
         this.anim = new ArrayList<>();
@@ -35,7 +35,7 @@ public class VeterinaryClinic {
         List<Animals> goable = new ArrayList<>();
         for (Animals animals : anim) {
             if (animals instanceof Goable) {
-                ((Flyable) animals).fly();
+                ((Goable) animals).run();
             }
         }
         return goable;
@@ -44,7 +44,7 @@ public class VeterinaryClinic {
         List<Animals> swimable = new ArrayList<>();
         for (Animals animals : anim) {
             if (animals instanceof Swimable) {
-                ((Flyable) animals).fly();
+                ((Swimable) animals).swim();
             }
         }
         return swimable;
